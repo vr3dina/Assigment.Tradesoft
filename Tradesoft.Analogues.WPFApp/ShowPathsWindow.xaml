@@ -1,0 +1,25 @@
+﻿<Window x:Class="Tradesoft.Analogues.WPFApp.ShowPathsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tradesoft.Analogues.WPFApp"
+        mc:Ignorable="d"
+        Title="Найденные аналоги" Height="450" Width="800">
+    <UniformGrid Columns="2" Rows="1">
+        <!--<Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>-->
+        <DataGrid x:Name="dgPathNames" ItemsSource="{Binding}" AutoGenerateColumns="False" SelectionChanged="dgPathNames_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn IsReadOnly="True" Header="Маршрут" Binding="{Binding}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="dgPaths" ItemsSource="{Binding}" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn IsReadOnly="True" Header="Содержимое маршрута"  Binding="{Binding}" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </UniformGrid>
+</Window>
